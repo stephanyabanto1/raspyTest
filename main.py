@@ -25,6 +25,7 @@ def turnOff():
 
 @sio.event
 def connect():
+    turnOn()
     sio.emit("ID", 'steph-pi')
     print('connection established')
 
