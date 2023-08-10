@@ -27,7 +27,6 @@ gpio.setup(IN3, gpio.OUT)
 gpio.setup(IN4, gpio.OUT) #backward
 #end of ENB
 
-gpio.setup(ENA, False)
 
 
 
@@ -70,6 +69,8 @@ def connect():
     turnOn()
     sio.emit("ID", 'steph-pi')
     print('connection established')
+    gpio.setup(ENA, False)
+    gpio.output(ENB, False)
 
 @sio.event
 def movePi(direction):
