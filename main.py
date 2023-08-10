@@ -2,26 +2,27 @@ import RPi.GPIO as gpio
 import time
 import socketio
 
+
 sio = socketio.Client()
 
 gpio.setmode(gpio.BCM)
-gpio.setup(17, gpio.OUT)
-gpio.setup(22, gpio.OUT)
 gpio.setup(27, gpio.OUT)
+gpio.setup(17, gpio.OUT)
+gpio.setup(4, gpio.OUT)
 
 def forward():
-    gpio.output(22,True )
-    gpio.output(27, False)
+    gpio.output(17,True )
+    gpio.output(4, False)
 
 def backward():
-    gpio.output(22, False)
-    gpio.output(27, True)
+    gpio.output(17, False)
+    gpio.output(4, True)
 
 def turnOn():
-    gpio.output(17,True)
+    gpio.output(27,True)
 
 def turnOff():
-    gpio.output(17, False)
+    gpio.output(27, False)
 
 @sio.event
 def connect():
@@ -55,5 +56,5 @@ def disconnect():
 
 onState = True
 
-sio.connect('http://192.168.2.19:3000')
+sio.connect('http://192.168.2.15:3000')
 sio.wait()
