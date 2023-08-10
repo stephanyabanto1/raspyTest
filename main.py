@@ -43,12 +43,12 @@ def turnRight():
     gpio.output(17, False)
     gpio.output(4, True)
 
-def turnLeft(){
+def turnLeft():
     gpio.output(6, False)
     gpio.output(13, True)
     gpio.output(17, True)
     gpio.output(4, False)
-}
+
 
 @sio.event
 def connect():
