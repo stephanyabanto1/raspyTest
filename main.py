@@ -69,8 +69,7 @@ def connect():
     turnOn()
     sio.emit("ID", 'steph-pi')
     print('connection established')
-    gpio.setup(ENA, False)
-    gpio.output(ENB, False)
+    
 
 @sio.event
 def movePi(direction):
