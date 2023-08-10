@@ -40,10 +40,12 @@ def movePi(direction):
 
 @sio.event 
 def piTurnedOff():
+    print("off message recieved")
     if(onState):
         print('Turned off')
         onState = False
         turnOff()
+        
     else:
         print("turned on")
         onState = True
