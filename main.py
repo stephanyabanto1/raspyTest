@@ -41,22 +41,11 @@ def movePi(direction):
 @sio.event 
 def piTurnedOff():
     print("off message recieved")
-    if(onState):
-        print('Turned off')
-        onState = False
-        turnOff()
-        
-    else:
-        print("turned on")
-        onState = True
-        turnOn()
-
 
 @sio.event
 def disconnect():
     print('disconnected from server')
 
-onState = True
 
 sio.connect('http://192.168.2.15:3000')
 sio.wait()
