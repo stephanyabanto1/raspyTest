@@ -52,8 +52,8 @@ def turnOff():
     gpio.output(ENB, False)
 
 def turnRight():
-    # gpio.output(IN3, True)
-    # gpio.output(IN4, False)
+    gpio.output(IN3, True)
+    gpio.output(IN4, False)
     gpio.output(IN1, False) #back
     gpio.output(IN2, True) #forward
 
