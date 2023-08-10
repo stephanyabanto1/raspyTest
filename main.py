@@ -7,12 +7,12 @@ sio = socketio.Client()
 
 gpio.setmode(gpio.BCM)
 
- ENA =27
- IN1 =17
- IN2 =4
- ENB =5
- IN3 =6
- IN4 =13
+ ENA = 27
+ IN1 = 17
+ IN2 = 4
+ ENB = 5
+ IN3 = 6
+ IN4 = 13
 
 
 #ENA Right
