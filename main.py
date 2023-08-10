@@ -34,8 +34,8 @@ gpio.setup(IN4, gpio.OUT) #backward
 def forward():
     gpio.output(IN1,True )
     gpio.output(IN2, True)
-    # gpio.output(IN3,True)
-    # gpio.output(IN4,False)
+    gpio.output(IN3,True)
+    gpio.output(IN4,False)
 
 def backward():
     gpio.output(IN1, False)
@@ -44,8 +44,8 @@ def backward():
 
 #wrong it is not turning on because of this
 def turnOn():
-    gpio.output(ENA,False)
-    gpio.output(ENB, False)
+    gpio.output(ENA,True)
+    gpio.output(ENB, True)
 
 def turnOff():
     gpio.output(ENA, False)
