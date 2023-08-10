@@ -7,7 +7,7 @@ sio = socketio.Client()
 
 gpio.setmode(gpio.BCM)
 
-#ENA
+#ENA Right
 gpio.setup(27, gpio.OUT)
 gpio.setup(17, gpio.OUT)
 gpio.setup(4, gpio.OUT)
@@ -42,8 +42,8 @@ def turnOff():
 def turnRight():
     gpio.output(6, True)
     gpio.output(13, False)
-    gpio.output(17, False)
-    gpio.output(4, True)
+    gpio.output(17, False) #back
+    gpio.output(4, True) #forward
 
 def turnLeft():
     gpio.output(6, False)
