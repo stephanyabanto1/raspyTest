@@ -27,7 +27,7 @@ gpio.setup(IN3, gpio.OUT)
 gpio.setup(IN4, gpio.OUT) #backward
 #end of ENB
 
-ENA = False
+gpio.setup(ENA, False)
 
 
 
