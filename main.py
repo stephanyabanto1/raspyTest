@@ -33,7 +33,7 @@ def backward():
 
 def turnOn():
     gpio.output(27,False)
-    gpio.output(5, True)
+    gpio.output(5, False)
 
 def turnOff():
     gpio.output(27, False)
