@@ -7,49 +7,62 @@ sio = socketio.Client()
 
 gpio.setmode(gpio.BCM)
 
+ ENA =27
+ IN1 =17
+ IN2 =4
+ ENB =5
+ IN3 =6
+ IN4 =13
+
+
 #ENA Right
-gpio.setup(27, gpio.OUT) #enable input
-gpio.setup(17, gpio.OUT)
-gpio.setup(4, gpio.OUT)
+gpio.setup(ENA, gpio.OUT) #enable input
+gpio.setup(IN1, gpio.OUT)
+gpio.setup(IN2, gpio.OUT)
 #End of ENA 
 
 #ENB
-gpio.setup(5, gpio.OUT) #enable input
-gpio.setup(6, gpio.OUT)
-gpio.setup(13, gpio.OUT) #backward
+gpio.setup(ENB, gpio.OUT) #enable input
+gpio.setup(IN3, gpio.OUT)
+gpio.setup(IN4, gpio.OUT) #backward
 #end of ENB
+
+ENA = False
+
 
 
 
 def forward():
-    gpio.output(17,True )
-    gpio.output(4, True)
-    # gpio.output(6,True)
-    # gpio.output(13,False)
+    gpio.output(IN1,True )
+    gpio.output(IN2, True)
+    # gpio.output(IN3,True)
+    # gpio.output(IN4,False)
 
 def backward():
-    gpio.output(17, False)
-    gpio.output(4, True)
+    gpio.output(IN1, False)
+    gpio.output(IN2, True)
 
+
+#wrong it is not turning on because of this
 def turnOn():
-    gpio.output(27,False)
-    gpio.output(5, False)
+    gpio.output(ENA,False)
+    gpio.output(ENB, False)
 
 def turnOff():
-    gpio.output(27, False)
-    gpio.output(5, False)
+    gpio.output(ENA, False)
+    gpio.output(ENB, False)
 
 def turnRight():
-    # gpio.output(6, True)
-    # gpio.output(13, False)
-    gpio.output(17, False) #back
-    gpio.output(4, True) #forward
+    # gpio.output(IN3, True)
+    # gpio.output(IN4, False)
+    gpio.output(IN1, False) #back
+    gpio.output(IN2, True) #forward
 
 def turnLeft():
-    gpio.output(6, False)
-    gpio.output(13, True)
-    gpio.output(17, True)
-    gpio.output(4, False)
+    gpio.output(IN3, False)
+    gpio.output(IN4, True)
+    gpio.output(IN1, True)
+    gpio.output(IN2, False)
 
 
 @sio.event
