@@ -40,7 +40,13 @@ def movePi(direction):
 
 @sio.event 
 def piTurnedOff():
-    print("off message recieved")
+    print("Turned Off")
+    turnOff()
+
+@sio.event
+def piTurnedOn():
+    print("Turned on")
+    turnOn()
 
 @sio.event
 def disconnect():
