@@ -81,7 +81,7 @@ def movePi(direction):
 
 @sio.event
 def goForward():
-    print("Go Forward"):
+    print("Go Forward")
     forward()
 
 @sio.event 
