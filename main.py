@@ -16,7 +16,7 @@ gpio.setup(4, gpio.OUT)
 #ENB
 gpio.setup(5, gpio.OUT)
 gpio.setup(6, gpio.OUT)
-gpio.setup(13, gpio.OUT)
+gpio.setup(13, gpio.OUT) #backward
 #end of ENB
 
 
@@ -24,6 +24,8 @@ gpio.setup(13, gpio.OUT)
 def forward():
     gpio.output(17,True )
     gpio.output(4, False)
+    gpio.output(6,True)
+    gpio.output(13,False)
 
 def backward():
     gpio.output(17, False)
