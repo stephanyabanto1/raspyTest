@@ -32,10 +32,10 @@ gpio.setup(IN4, gpio.OUT) #backward
 
 
 def forward():
-    gpio.output(IN1,True )
-    gpio.output(IN2, True)
-    gpio.output(IN3,True)
-    gpio.output(IN4,False)
+    gpio.output(IN1, True)
+    gpio.output(IN2, False)
+    gpio.output(IN3, True)
+    gpio.output(IN4, False)
 
 def backward():
     gpio.output(IN1, False)
@@ -54,8 +54,8 @@ def turnOff():
 def turnRight():
     gpio.output(IN3, False)
     gpio.output(IN4, True)
-    gpio.output(IN1, False) #back
-    gpio.output(IN2, True) #forward
+    gpio.output(IN1, False) 
+    gpio.output(IN2, True) 
 
 def turnLeft():
     gpio.output(IN3, True)
@@ -78,6 +78,11 @@ def movePi(direction):
         forward()
     else:
         backward()
+
+@sio.event
+def goForward():
+    print("Go Forward"):
+    forward()
 
 @sio.event 
 def piTurnedOff():
