@@ -115,5 +115,5 @@ def disconnect():
     print('disconnected from server')
 
 
-sio.connect('http://192.168.2.15:3000')
+sio.connect('http://192.168.2.18:3000')
 sio.wait()
