@@ -38,9 +38,10 @@ def forward():
     gpio.output(IN4, True)
 
 def backward():
-    gpio.output(IN1, False)
+   gpio.output(IN1, False)
     gpio.output(IN2, True)
-
+    gpio.output(IN3, True)
+    gpio.output(IN4, False)
 
 #wrong it is not turning on because of this
 def turnOn():
@@ -103,6 +104,11 @@ def piTurnedRight():
 def piTurnedLeft():
     print("Turned left")
     turnLeft()
+
+@sio.event
+def goBackward():
+    print("Went Backward")
+    backward()
 
 @sio.event
 def disconnect():
