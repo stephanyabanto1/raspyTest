@@ -38,7 +38,7 @@ def forward():
     gpio.output(IN4, True)
 
 def backward():
-   gpio.output(IN1, False)
+    gpio.output(IN1, False)
     gpio.output(IN2, True)
     gpio.output(IN3, True)
     gpio.output(IN4, False)
