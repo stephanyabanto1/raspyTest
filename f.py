@@ -69,6 +69,7 @@ state = {
 def exec():
     while(True):
         pass
+        time.wait(1)
         # print(state)
     pass
 
