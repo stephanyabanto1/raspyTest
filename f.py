@@ -3,9 +3,6 @@ import time
 import socketio
 import atexit
 
-
-
-
 sio = socketio.Client()
 
 gpio.setmode(gpio.BCM)
@@ -62,6 +59,18 @@ def TurnOfAll():
 #wrong it is not turning on because of this
 
 
+state = [
+    up: False,
+    down: False,
+    left: False,
+    right: False
+]
+
+def exec():
+    while(True):
+        print(state)
+
+@sio.start_background_task(exec)
 
 @sio.event
 def connect():
@@ -70,42 +79,9 @@ def connect():
     
 
 @sio.event
-def movePi(direction):
+def phone_instructions(instructions):
     print('recieved direction:  ', direction)
     
-
-@sio.event
-def goForward():
-    TurnOnAll()
-    print("Go Forward")
-    
-    
-
-@sio.event 
-def piTurnedOff():
-    print("Turned Off")
-   
-
-@sio.event
-def piTurnedOn():
-    print("Turned on")
-    
-
-@sio.event
-def piTurnedRight():
-    print("Turned Right")
-   
-
-@sio.event
-def piTurnedLeft():
-    print("Turned left")
-   
-
-@sio.event
-def goBackward():
-    TurnOfAll()
-    print("Went Backward")
-   
 
 @sio.event
 def disconnect():
