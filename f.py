@@ -82,8 +82,8 @@ def connect():
 
 @sio.event
 def robot_instructions(instructions):
-    print(instructions.up)
-    state.up = instructions.up
+    print(instructions)
+    # state.up = instructions.up
     # print('recieved direction:  ', instructions)
     
 
