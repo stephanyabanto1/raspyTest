@@ -59,12 +59,12 @@ def TurnOfAll():
 #wrong it is not turning on because of this
 
 
-state = [
+state = {
     up: False,
     down: False,
     left: False,
     right: False
-]
+}
 
 def exec():
     while(True):
