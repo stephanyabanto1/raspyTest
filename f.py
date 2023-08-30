@@ -98,5 +98,5 @@ def exit_handler():
 
 atexit.register(exit_handler)
 
-sio.connect('http://192.168.2.19:3000')
+sio.connect('http://192.168.2.11:3000')
 sio.wait()
