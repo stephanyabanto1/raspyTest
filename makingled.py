@@ -36,6 +36,19 @@ def LED1On():
 def LED1OFF():
     gpio.output(LED1, False)
 
+def TurnOnAll():
+    gpio.output(LED1, True)
+    gpio.output(LED2, True)
+    gpio.output(LED3, True)
+    gpio.output(LED4, True)
+    gpio.output(LED5, True)
+    gpio.output(LED6, True)
+
+
+    #button to turn them all on 
+    #button to turn each of four on 
+
+
 
 
 
@@ -64,7 +77,7 @@ def movePi(direction):
 
 @sio.event
 def goForward():
-    LED1On()
+    TurnOnAll()
     print("Go Forward")
     
     
