@@ -80,7 +80,7 @@ def connect():
     
 
 @sio.event
-def phone_instructions(instructions):
+def robot_instructions(instructions):
     print('recieved direction:  ', instructions)
     
 
