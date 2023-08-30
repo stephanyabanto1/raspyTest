@@ -67,9 +67,10 @@ state = {
 }
 
 def exec():
-    while(True):
-        pass
+    # while(True):
+    #     pass
         # print(state)
+    pass
 
 @sio.start_background_task(exec)
 
