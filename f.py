@@ -69,10 +69,10 @@ state = {
 def exec():
     # while(True):
     #     pass
-        # print(state)
+    #     print(state)
     pass
 
-# @sio.start_background_task(exec)
+@sio.start_background_task(exec)
 
 @sio.event
 def connect():
@@ -82,7 +82,9 @@ def connect():
 
 @sio.event
 def robot_instructions(instructions):
-    print('recieved direction:  ', instructions)
+    print(instructions.up)
+    state.up = instructions.up
+    # print('recieved direction:  ', instructions)
     
 
 @sio.event
