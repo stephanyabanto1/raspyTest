@@ -74,7 +74,8 @@ def exec():
     #     # print(state)
     # pass
 
-loop = @sio.start_background_task(exec)
+loop = sio.start_background_task(exec)
+
 loop.join(exec)
 
 @sio.event
