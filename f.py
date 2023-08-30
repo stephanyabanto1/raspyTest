@@ -67,12 +67,12 @@ state = {
 }
 
 def exec():
-    # while(True):
-    #     pass
-    #     print(state)
+    while(True):
+        pass
+        print(state)
     pass
 
-# @sio.start_background_task(exec)
+@sio.start_background_task(exec)
 
 @sio.event
 def connect():
