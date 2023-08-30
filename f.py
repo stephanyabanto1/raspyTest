@@ -60,10 +60,10 @@ def TurnOfAll():
 
 
 state = {
-    up: False,
-    down: False,
-    left: False,
-    right: False
+    'up': False,
+    'down': False,
+    'left': False,
+    'right': False
 }
 
 def exec():
