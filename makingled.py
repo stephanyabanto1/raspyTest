@@ -61,7 +61,7 @@ def movePi(direction):
 
 @sio.event
 def goForward():
-    FirstLed()
+    LED1On()
     print("Go Forward")
     
     
