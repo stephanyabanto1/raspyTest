@@ -26,8 +26,15 @@ gpio.setup(LED5, gpio.OUT)
 gpio.setup(LED6, gpio.OUT)
 
 
-def FirstLed():
+def LED1On():
     gpio.output(LED1, True)
+
+
+def LED1OFF():
+    gpio.output(LED1, False)
+
+
+
 
 
 
@@ -81,6 +88,7 @@ def piTurnedLeft():
 
 @sio.event
 def goBackward():
+    LED1OFF()
     print("Went Backward")
    
 
