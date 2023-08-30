@@ -76,7 +76,7 @@ def exec():
 
 loop = sio.start_background_task(exec)
 
-loop.join(exec)
+loop.join()
 
 @sio.event
 def connect():
@@ -99,9 +99,11 @@ def exit_handler():
     gpio.cleanup()
     print('cleaned pins')
 
-
-
 atexit.register(exit_handler)
 
 sio.connect('http://192.168.2.11:3000')
-sio.wait()
+
+
+while(True):
+    sio.wait()
+    print("CHECKING BALANCE")
