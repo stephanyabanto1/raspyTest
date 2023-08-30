@@ -1,6 +1,9 @@
 import RPi.GPIO as gpio
 import time
 import socketio
+import atexit
+
+
 
 
 sio = socketio.Client()
@@ -92,16 +95,18 @@ def goBackward():
     print("Went Backward")
    
 
-
-
-
 @sio.event
 def disconnect():
     print('disconnected from server')
 
 
+def exit_handler():
+    gpio.cleanup()
+    print 'cleaned pins'
 
 
+
+atexit.register(exit_handler)
 
 sio.connect('http://192.168.2.19:3000')
 sio.wait()
