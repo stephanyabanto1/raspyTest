@@ -102,7 +102,7 @@ def disconnect():
 
 def exit_handler():
     gpio.cleanup()
-    print 'cleaned pins'
+    print('cleaned pins')
 
 
 
