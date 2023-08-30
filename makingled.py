@@ -45,6 +45,15 @@ def TurnOnAll():
     gpio.output(LED6, True)
 
 
+def TurnOfAll():
+    gpio.output(LED1, False)
+    gpio.output(LED2, False)
+    gpio.output(LED3, False)
+    gpio.output(LED4, False)
+    gpio.output(LED5, False)
+    gpio.output(LED6, False)
+
+
     #button to turn them all on 
     #button to turn each of four on 
 
@@ -104,7 +113,7 @@ def piTurnedLeft():
 
 @sio.event
 def goBackward():
-    LED1OFF()
+    TurnOfAll()
     print("Went Backward")
    
 
