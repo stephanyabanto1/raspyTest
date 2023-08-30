@@ -72,7 +72,7 @@ def exec():
     #     print(state)
     pass
 
-@sio.start_background_task(exec)
+# @sio.start_background_task(exec)
 
 @sio.event
 def connect():
