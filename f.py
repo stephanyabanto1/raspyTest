@@ -66,17 +66,6 @@ state = {
     'right': False
 }
 
-def exec():
-    print('check')
-    # while(True):
-    #     pass
-    #     time.sleep(1)
-    #     # print(state)
-    # pass
-
-loop = sio.start_background_task(exec)
-
-loop.join()
 
 @sio.event
 def connect():
@@ -86,8 +75,8 @@ def connect():
 
 @sio.event
 def robot_instructions(instructions):
-    state['up'] = instructions['up']
-    print(state)
+    # state['up'] = instructions['up']
+    print(instructions)
     
 
 @sio.event
@@ -103,7 +92,4 @@ atexit.register(exit_handler)
 
 sio.connect('http://192.168.2.11:3000')
 
-
-while(True):
-    sio.wait()
-    print("CHECKING BALANCE")
+sio.wait()
